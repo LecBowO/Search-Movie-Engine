@@ -1,8 +1,5 @@
 import streamlit as st
 import requests
-from nltk.tokenize import word_tokenize
-
-nltk.download("punkt")
 
 st.set_page_config(page_title='SEARCH | MOVIE', page_icon='favicon.png')
 #https://www.omdbapi.com/?apikey=YOUR_API_KEY&type=actor&s={actor_name}
@@ -28,8 +25,6 @@ def fetch_img(actor):
 
 movie = st.text_input("Enter A Movie Name")
 movie = movie.lower()   
-movie = word_tokenize(movie)
-movie = " ".join(movie)
 
 if st.button("Search"):
     try:
